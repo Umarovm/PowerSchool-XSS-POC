@@ -13,10 +13,14 @@ Note: This only sends the averages of each course and the absences/tardies.
 
 The vulnerability is present on line 1,042 in forms.html:
 
-sharetype = "whatever is after sharetype=",
+`sharetype = "whatever is after sharetype=",`
 
 When quotes are passed after sharetype=, they are not escaped. So a quote may be able to close the string and then a semicolon following that quote may be able to end the whole variable assignment statement. JavaScript code can be appended afterwards and then be followed by a comment operator, "//", to make the interpreter ignore the quote and comma that follows: 
 
 /guardian/forms.html?sharetype=";alert()//
+
+In the source code, this appears as:
+
+`sharetype = "";alert()//",`
 
 This bypasses PowerSchool's cross-site scripting mitigation by not using angle brackets. The vulnerability was assigned CVE-2021-29386.
