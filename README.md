@@ -30,4 +30,5 @@ This bypasses PowerSchool's cross-site scripting mitigation by not using angle b
 A variant of this vulnerability is also present in the teacher SIS, which can theoretically be used to change grades, though it is harder to exploit due to the fact that it requires sending fields such as a seemingly random student ID.
 
 Proof-of-concept:
+
 /teachers/formbuilder/forms.html?sharetype=";alert()//
