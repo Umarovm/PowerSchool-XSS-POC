@@ -17,7 +17,7 @@ The vulnerability is present on line 1,042 in forms.html:
 
 `sharetype = "whatever is after sharetype=",`
 
-When quotes are passed after sharetype=, they are not escaped. So a quote may be able to close the string and then a semicolon following that quote may be able to end the whole variable assignment statement. JavaScript code can be appended afterwards and then be followed by a comment operator, "//", to make the interpreter ignore the quote and comma that follows: 
+When quotes are passed after sharetype=, they are not escaped. So a quote may be able to close the string and then a semicolon following that quote may be able to end the whole variable assignment statement. JavaScript code can be appended afterwards and then be followed by a comment operator, "//", to make it ignore the quote and comma that follows: 
 
 /guardian/forms.html?sharetype=";alert()//
 
