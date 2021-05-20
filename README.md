@@ -27,7 +27,7 @@ In the source code, this appears as:
 
 This bypasses PowerSchool's cross-site scripting mitigation by not using angle brackets. The vulnerability was assigned CVE-2021-29386.
 
-A variant of this vulnerability is also present in the teacher SIS, which can theoretically be used to change grades, though it is harder to exploit due to the fact that it requires sending fields such as a seemingly random student ID.
+A variant of this vulnerability is also present in the teacher SIS, which can hypothetically be used to change grades, though it is harder to exploit due to the fact that it requires sending fields such as a seemingly random student ID.
 
 Proof-of-concept:
 
