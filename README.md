@@ -25,7 +25,7 @@ In the source code, this appears as:
 
 `sharetype = "";alert()//",`
 
-This bypasses PowerSchool's cross-site scripting mitigation by not using angle brackets. The vulnerability was assigned CVE-2021-29386.
+This bypasses PowerSchool's cross-site scripting mitigation by avoiding the use of angle brackets. The vulnerability was assigned CVE-2021-29386.
 
 This vulnerability is also present in the teacher SIS, but forms.html is under a different directory. It can hypothetically be used to change grades, though it is harder to exploit due to the fact that it requires sending fields such as a seemingly random student ID.
 
