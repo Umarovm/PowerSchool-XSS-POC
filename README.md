@@ -29,6 +29,6 @@ This bypasses PowerSchool's cross-site scripting mitigation by avoiding the use 
 
 This vulnerability is also present in the teacher SIS, but forms.html is under a different directory. It can hypothetically be used to change grades, though it is harder to exploit due to the fact that it requires sending fields such as a seemingly random student ID.
 
-Proof-of-concept:
+Proof-of-concept (for teacher SIS):
 
 /teachers/formbuilder/forms.html?sharetype=";alert()//
